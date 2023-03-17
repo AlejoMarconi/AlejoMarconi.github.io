@@ -38,11 +38,11 @@ nav ul {
 }
 
 nav li {
-	margin-left: 20px;
+	margin-left: 1.2em;
 }
 
 nav a {
-	font-size: 18px;
+	font-size: 1.5em;
 	font-weight: bold;
 	transition: all 0.2s ease-in-out;
 }
@@ -76,7 +76,7 @@ nav a:hover {
 }
 
 .proyecto h3 {
-	font-size: 24px;
+	font-size: 70px;
 	margin: 0;
 }
 
@@ -89,19 +89,19 @@ nav a:hover {
 
 #acerca-de {
 	background-color: #fafafa;
-	padding: 50px;
+	padding: 2.5em;
 	text-align: center;
 }
 
 #acerca-de h2 {
-	font-size: 36px;
+	font-size: 3em;
 	margin-bottom: 30px;
 }
 
 #acerca-de p {
-	font-size: 18px;
+	font-size: 1.5em;
 	line-height: 1.5;
-	max-width: 800px;
+	max-width: 50em;
 	margin: 0 auto;
 }
 
@@ -125,7 +125,7 @@ form {
 }
 
 label {
-	font-size: 18px;
+	font-size: 2em;
 	margin-right: 10px;
 }
 
