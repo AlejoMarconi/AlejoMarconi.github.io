@@ -70,13 +70,3 @@ section h2 {
 .boton:hover {
   background-color: #005588;
 }
-
-footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
- 
-}
