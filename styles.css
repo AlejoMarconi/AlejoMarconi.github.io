@@ -1,13 +1,13 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-image: url('jubiladosMamá.jpeg');
-  background-color: rgba(0, 0, 0, 0.8);
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: multiply; /* opcional */
-  color: white;
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+background-image: url('jubiladosMamá.jpeg');
+background-color: rgba(0, 0, 0, 0.8);
+background-size: cover;
+background-position: center;
+background-blend-mode: multiply; /* opcional */
+color: white;
 }
 header {
   background-color: #003366;
@@ -15,7 +15,6 @@ header {
   padding: 10px;
 }
 .contacto {
-  margin-top: -40px;
   float: right;
 }
 
