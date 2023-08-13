@@ -6,40 +6,46 @@ const fileInput = document.getElementById('file-input');
 const addButton = document.getElementById('add-button');
 
 images.forEach(image => {
-  image.addEventListener('click', () => {
-    modal.style.display = 'block';
-    modalImg.src = image.src;
+    image.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalImg.src = image.src;
+  
+      // Agregar la clase 'open' inmediatamente y establecer el estilo inicial
+      modalImg.classList.add('open');
+    });
   });
-});
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  }
 
-function closeModal() {
+closeButton.addEventListener('click', () => {
   modal.style.display = 'none';
   modalImg.src = '';
-}
+  modalImg.classList.remove('open'); // Remove the 'open' class
+});
 
-
+modal.addEventListener('click', (e) => {
+  if (e.target === modal || e.target !== modalImg) {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modalImg.classList.remove('open'); // Remove the 'open' class
+  }
+});
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeModal();
-    }
-});
-
-addButton.addEventListener('click', () => {
-    fileInput.click();
-});
-
-closeButton.addEventListener('click', closeModal);
-
-modal.addEventListener('click', (e) => {
-    if (e.target === modal || e.target === closeButton || e.target !== modalImg) {
       closeModal();
     }
+  });
+
+addButton.addEventListener('click', () => {
+  fileInput.click();
 });
 
 fileInput.addEventListener('change', (event) => {
-    const files = event.target.files;
-    
+  const files = event.target.files;
+  
   for (const file of files) {
     const reader = new FileReader();
     reader.onload = function () {
@@ -50,6 +56,11 @@ fileInput.addEventListener('change', (event) => {
       newImage.addEventListener('click', () => {
         modal.style.display = 'block';
         modalImg.src = newImage.src;
+
+        // Use setTimeout to add the 'open' class after a slight delay
+        setTimeout(() => {
+          modalImg.classList.add('open');
+        }, 10);
       });
       document.querySelector('.image-gallery').appendChild(newImage);
     };
