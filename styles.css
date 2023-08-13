@@ -33,27 +33,31 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-    .modal-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
+.modal-content {
+    display: flex;
+    justify-content: center; /* Alinear el contenido en la parte superior */
+    align-items: center; /* Estirar los elementos verticalmente */
+    height: 100%;
+}
     
-    .modal-img {
-        max-width: 80%;
-        max-height: 80%;
-    }
+.modal-img {
+    max-width: 80%; /* Asegurarse de que la imagen no exceda el ancho del modal */
+    max-height: 80%; /* Restar el espacio de la 'X' */
+    object-fit: contain; /* Ajustar el tamaño de la imagen según su aspecto */
+}
     
-    .close-button {
-        position: absolute;
-        top: 10px;
-        right: 12%;
-        color: rgb(209, 37, 37);
-        font-size: 65px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+    
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    color: rgb(209, 37, 37);
+    font-size: 54px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
     /* Existing CSS rules */
     
 /* CSS Styling for dynamically added images */
@@ -73,7 +77,10 @@
 /* CSS Styling for modal animation */
 .modal-img.open {
     animation: modalImageAnimation 0.3s ease-in-out;
+    transform: scale(1); /* Establecer escala inicial */
+    opacity: 1; /* Establecer opacidad inicial */
 }
+
 
 @keyframes modalImageAnimation {
     from {
