@@ -9,35 +9,37 @@ images.forEach(image => {
   image.addEventListener('click', () => {
     modal.style.display = 'block';
     modalImg.src = image.src;
-
-    // Use setTimeout to add the 'open' class after a slight delay
-    setTimeout(() => {
-      modalImg.classList.add('open');
-    }, 10);
   });
 });
 
-closeButton.addEventListener('click', () => {
+function closeModal() {
   modal.style.display = 'none';
   modalImg.src = '';
-  modalImg.classList.remove('open'); // Remove the 'open' class
-});
+}
 
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    modalImg.src = '';
-    modalImg.classList.remove('open'); // Remove the 'open' class
-  }
+
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
 });
 
 addButton.addEventListener('click', () => {
-  fileInput.click();
+    fileInput.click();
+});
+
+closeButton.addEventListener('click', closeModal);
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target === closeButton || e.target !== modalImg) {
+      closeModal();
+    }
 });
 
 fileInput.addEventListener('change', (event) => {
-  const files = event.target.files;
-  
+    const files = event.target.files;
+    
   for (const file of files) {
     const reader = new FileReader();
     reader.onload = function () {
@@ -48,11 +50,6 @@ fileInput.addEventListener('change', (event) => {
       newImage.addEventListener('click', () => {
         modal.style.display = 'block';
         modalImg.src = newImage.src;
-
-        // Use setTimeout to add the 'open' class after a slight delay
-        setTimeout(() => {
-          modalImg.classList.add('open');
-        }, 10);
       });
       document.querySelector('.image-gallery').appendChild(newImage);
     };
